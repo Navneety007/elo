@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo Rating Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Elo Rating Game</h1>
+        <p>Choose between options and see how you rank!</p>
+        <div class="host-controls">
+            <button id="new-game-button" class="button">Start New Game</button>
+        </div>
+    </header>
+    <main>
+        <section id="add-question">
+            <h2>Add a Question</h2>
+            <input type="text" id="question-input" placeholder="Enter your question here">
+            <input type="text" id="option1-input" placeholder="Option 1">
+            <input type="text" id="option2-input" placeholder="Option 2">
+            <button id="add-question-btn">Add Question</button>
+        </section>
+        <section id="question-display">
+            <h2>Current Question</h2>
+            <div id="question-container"></div>
+            <button id="option1-btn"></button>
+            <button id="option2-btn"></button>
+        </section>
+        <section id="leaderboard">
+            <h2>Leaderboard</h2>
+            <div id="leaderboard-container">
+                <ul id="leaderboard-list"></ul>
+            </div>
+            <div class="share-buttons">
+                <button id="share-results-image" class="button">Share Results</button>
+                <button id="download-results-image" class="button">Download Results</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Share this room: <span id="room-link"></span> <button id="share-link" class="button small">Copy Link</button></p>
+    </footer>
+    
+    <!-- Add html2canvas library for image generation -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/elo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
