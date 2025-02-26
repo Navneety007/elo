@@ -381,3 +381,6 @@ function resetGame() {
         });
     }
 }
+
+// Call updateLeaderboard periodically or based on user actions
+setInterval(updateLeaderboard, 5000);
