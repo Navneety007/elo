@@ -57,3 +57,18 @@ Before we get started, keep in mind:
 [info] 
 [info] ✔  Success! Logged into GitHub as Navneety007 
 [info] 
+[debug] [2025-02-26T10:41:43.514Z] >>> [apiv2][query] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key type=owner
+[debug] [2025-02-26T10:41:43.883Z] <<< [apiv2][status] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key 401
+[debug] [2025-02-26T10:41:43.883Z] <<< [apiv2][body] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[debug] [2025-02-26T10:41:49.944Z] >>> [apiv2][query] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key type=owner
+[debug] [2025-02-26T10:41:50.212Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-02-26T10:41:50.267Z] <<< [apiv2][status] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key 401
+[debug] [2025-02-26T10:41:50.268Z] <<< [apiv2][body] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[debug] [2025-02-26T10:41:50.376Z] >>> [apiv2][query] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key type=owner
+[debug] [2025-02-26T10:41:50.524Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 401
+[debug] [2025-02-26T10:41:50.524Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[debug] [2025-02-26T10:41:50.628Z] <<< [apiv2][status] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key 401
+[debug] [2025-02-26T10:41:50.629Z] <<< [apiv2][body] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[debug] [2025-02-26T10:41:51.327Z] >>> [apiv2][query] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key type=owner
+[debug] [2025-02-26T10:41:51.570Z] <<< [apiv2][status] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key 401
+[debug] [2025-02-26T10:41:51.570Z] <<< [apiv2][body] GET https://api.github.com/repos/Navneety007/elo/actions/secrets/public-key {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
