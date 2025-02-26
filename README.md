@@ -20,15 +20,14 @@ A fun web application to compare and rank anything using ELO rating system.
 ## Setup
 
 1. Clone the repository
-2. Create a `.env` file with your Firebase configuration
-3. Install dependencies: `npm install`
-4. Build the project: `npm run build`
-5. Deploy to Firebase: `firebase deploy`
+2. Install Firebase CLI tools: `npm install -g firebase-tools`
+3. Login to Firebase: `firebase login`
+4. Update Firebase configuration in `js/firebase-config.js` if needed
+5. Deploy: `firebase deploy`
 
 ## Local Development
 
-1. Install dependencies: `npm install`
-2. Start local server: `npm start`
+Open `index.html` in your browser for local development.
 
 ## License
 

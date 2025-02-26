@@ -1,13 +1,10 @@
 {
   "hosting": {
-    "public": ".", 
+    "public": "elo-rating-website",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "webpack.config.js",
-      "package.json",
-      "README.md"
+      "**/node_modules/**"
     ]
   }
 }
