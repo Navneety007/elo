@@ -3,45 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elo Rating Game</title>
+    <title>Neon ELO Rating Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Elo Rating Game</h1>
-        <p>Choose between options and see how you rank!</p>
-        <div class="host-controls">
-            <button id="new-game-button" class="button">Start New Game</button>
-        </div>
-    </header>
-    <main>
-        <section id="add-question">
-            <h2>Add a Question</h2>
-            <input type="text" id="question-input" placeholder="Enter your question here">
-            <input type="text" id="option1-input" placeholder="Option 1">
-            <input type="text" id="option2-input" placeholder="Option 2">
-            <button id="add-question-btn">Add Question</button>
-        </section>
-        <section id="question-display">
-            <h2>Current Question</h2>
-            <div id="question-container"></div>
-            <button id="option1-btn"></button>
-            <button id="option2-btn"></button>
-        </section>
-        <section id="leaderboard">
-            <h2>Leaderboard</h2>
-            <div id="leaderboard-container">
-                <ul id="leaderboard-list"></ul>
-            </div>
-            <div class="share-buttons">
-                <button id="share-results-image" class="button">Share Results</button>
-                <button id="download-results-image" class="button">Download Results</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Share this room: <span id="room-link"></span> <button id="share-link" class="button small">Copy Link</button></p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>ELO Rating Game</h1>
+            <p>Compare anything with your friends!</p>
+        </header>
+        
+        <main>
+            <!-- Welcome Screen (Default View) -->
+            <section id="welcome-screen" class="active">
+                <h2>Welcome to the ELO Rating Game!</h2>
+                <p>Create a room or join an existing one to get started</p>
+                <div class="button-group">
+                    <button id="create-room-btn" class="button blue">Create Room</button>
+                    <button id="join-room-btn" class="button pink">Join Room</button>
+                </div>
+            </section>
+            
+            <!-- Join Room Screen -->
+            <section id="join-room-screen">
+                <h2>Join a Room</h2>
+                <input type="text" id="join-room-code" placeholder="Enter room code">
+                <button id="join-room-submit" class="button pink">Join</button>
+                <button id="back-to-welcome" class="button">Back</button>
+            </section>
+            
+            <!-- Host Setup Screen -->
+            <section id="host-setup-screen">
+                <h2>Create Your Game</h2>
+                <input type="text" id="question-input" placeholder="Enter your question (e.g., Who's more likely to...)">
+                <div id="options-list">
+                    <input type="text" class="option-input" placeholder="Enter participant name">
+                    <input type="text" class="option-input" placeholder="Enter participant name">
+                </div>
+                <button id="add-option-btn" class="add-option-btn">+</button>
+                <button id="start-game-btn" class="button green">Start Game</button>
+                
+                <div class="room-link-container">
+                    <p>Share this code with your friends:</p>
+                    <span id="room-link"></span>
+                    <button id="share-link" class="button">Copy</button>
+                </div>
+            </section>
+            
+            <!-- Voting Screen -->
+            <section id="voting-screen">
+                <h2 id="current-question">Who's more likely to...?</h2>
+                <div class="options-container">
+                    <div id="option1-btn" class="option-button"></div>
+                    <div id="option2-btn" class="option-button"></div>
+                </div>
+                <p id="voting-progress">Question 1/10</p>
+            </section>
+            
+            <!-- Results Screen -->
+            <section id="results-screen">
+                <h2>Final Results</h2>
+                <div id="leaderboard-container">
+                    <ul id="leaderboard-list"></ul>
+                </div>
+                <div class="result-actions">
+                    <button id="share-results-image" class="button purple">Share Results</button>
+                    <button id="download-results-image" class="button blue">Download Image</button>
+                    <button id="new-game-button" class="button pink">New Game</button>
+                </div>
+            </section>
+            
+            <!-- Waiting Room -->
+            <section id="waiting-room">
+                <h2>Waiting for Host to Start</h2>
+                <div class="spinner"></div>
+                <p>The host is setting up the game...</p>
+                <p id="participants-count">Participants: <span>1</span></p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2023 ELO Rating Game | Created with 💖</p>
+        </footer>
+    </div>
     
     <!-- Add html2canvas library for image generation -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>

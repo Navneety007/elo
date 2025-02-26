@@ -1,24 +1,14 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
-import { getAuth } from "firebase/auth";
-
-// Firebase configuration from environment variables
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyC6ReMDuuKpsmGeLkFvsBtkC7A2fb0zMRA",
+  authDomain: "elorating-112e8.firebaseapp.com",
+  projectId: "elorating-112e8",
+  storageBucket: "elorating-112e8.firebasestorage.app",
+  messagingSenderId: "990690767451",
+  appId: "1:990690767451:web:08892270250219db43c57e",
+  measurementId: "G-PLJ0FZ6XK4"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
-const auth = getAuth(app);
-
-export { app, db, storage, auth };
+// Initialize Firebase with compat version
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
