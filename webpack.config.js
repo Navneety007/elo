@@ -1,26 +1,45 @@
-const webpack = require('webpack');
-const dotenv = require('dotenv');
 const path = require('path');
+const webpack = require('webpack');
 
-// Load environment variables
-dotenv.config();
+// Get Firebase config from the same values in firebase-config.js
+const firebaseConfig = {
+  apiKey: "AIzaSyDEJXhhKGUbIOLHpAWHHNh9cM45oY3YDQo",
+  authDomain: "elorating-e076d.firebaseapp.com",
+  projectId: "elorating-e076d",
+  storageBucket: "elorating-e076d.firebasestorage.app",
+  messagingSenderId: "971651588043",
+  appId: "1:971651588043:web:2bcc9ca35b91028beba04e",
+  measurementId: "G-1X4V59V0T0"
+};
 
 module.exports = {
-  entry: './js/main.js', // Replace with your entry point
+  entry: './js/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
-      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
-      'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
-      'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
-      'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
-      'process.env.FIREBASE_APP_ID': JSON.stringify(process.env.FIREBASE_APP_ID),
-      'process.env.FIREBASE_MEASUREMENT_ID': JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
+      'FIREBASE_CONFIG': JSON.stringify(firebaseConfig)
     }),
   ],
-  // Additional webpack configurations...
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, '/'),
+    compress: true,
+    port: 8080
+  }
 };

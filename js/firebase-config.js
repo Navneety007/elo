@@ -1,39 +1,18 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC6ReMDuuKpsmGeLkFvsBtkC7A2fb0zMRA",
-    authDomain: "elorating-112e8.firebaseapp.com",
-    projectId: "elorating-112e8",
-    storageBucket: "elorating-112e8.firebasestorage.app",
-    messagingSenderId: "990690767451",
-    appId: "1:990690767451:web:08892270250219db43c57e",
-    measurementId: "G-PLJ0FZ6XK4"
-  };
+  apiKey: "AIzaSyDEJXhhKGUbIOLHpAWHHNh9cM45oY3YDQo",
+  authDomain: "elorating-e076d.firebaseapp.com",
+  projectId: "elorating-e076d",
+  storageBucket: "elorating-e076d.firebasestorage.app",
+  messagingSenderId: "971651588043",
+  appId: "1:971651588043:web:2bcc9ca35b91028beba04e",
+  measurementId: "G-1X4V59V0T0"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Function to add a question to the database
-function addQuestion(question) {
-    const questionsRef = firebase.database().ref('questions');
-    questionsRef.push(question);
+// Initialize analytics if available
+if (firebase.analytics) {
+  const analytics = firebase.analytics();
 }
-
-// Function to retrieve questions from the database
-function getQuestions(callback) {
-    const questionsRef = firebase.database().ref('questions');
-    questionsRef.on('value', (snapshot) => {
-        const questions = snapshot.val();
-        callback(questions);
-    });
-}
-
-// Function to retrieve leaderboard data
-function getLeaderboard(callback) {
-    const leaderboardRef = firebase.database().ref('leaderboard');
-    leaderboardRef.on('value', (snapshot) => {
-        const leaderboard = snapshot.val();
-        callback(leaderboard);
-    });
-} 
-
-export { addQuestion, getQuestions, getLeaderboard };
